@@ -20,7 +20,7 @@ ghcr.io/freifunk-gluon/gluon-build
 Container version to use
 
 #### Default
-master
+main
 
 
 ### gluon-path
