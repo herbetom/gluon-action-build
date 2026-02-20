@@ -7,7 +7,7 @@ inputs:
     default: 'ghcr.io/freifunk-gluon/gluon-build'
   container-version:
     description: 'Container version to use'
-    default: 'master'
+    default: 'main'
   gluon-path:
     description: 'Path to Gluon repository'
     required: true
