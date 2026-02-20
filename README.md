@@ -7,6 +7,14 @@ This Action utlizes the `gluon-build` docker container.
 
 ## Input
 
+### container-path
+#### Description
+Path to the Container registry Image
+
+#### Default
+ghcr.io/freifunk-gluon/gluon-build
+
+
 ### container-version
 #### Description
 Container version to use

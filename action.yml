@@ -2,6 +2,9 @@
 name: "Build Gluon"
 description: "Build Gluon images using the build-gluon docker container"
 inputs:
+  container-path:
+    description: 'Container path to use'
+    default: ''
   container-version:
     description: 'Container version to use'
     default: 'master'
@@ -46,6 +49,7 @@ runs:
           -t sdk \
           $GITHUB_ACTION_PATH
       env:
+        CONTAINER: ${{ inputs.container-path }}
         VERSION: ${{ inputs.container-version }}
       shell: bash
     - run: |
