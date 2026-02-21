@@ -49,9 +49,20 @@ runs:
           -t sdk \
           $GITHUB_ACTION_PATH
       env:
+        VERSION: ${{ inputs.container-version }}
+      shell: bash
+      if: needs.build-meta.outputs.container-image == ''
+    - run: |
+        docker build \
+          --build-arg CONTAINER \
+          --build-arg VERSION \
+          -t sdk \
+          $GITHUB_ACTION_PATH
+      env:
         CONTAINER: ${{ inputs.container-image }}
         VERSION: ${{ inputs.container-version }}
       shell: bash
+      if: needs.build-meta.outputs.container-image != ''
     - run: |
         docker run --rm \
           --user "$(id -u):$(id -g)" \
